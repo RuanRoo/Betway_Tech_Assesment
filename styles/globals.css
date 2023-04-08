@@ -1,9 +1,11 @@
-html,
-body {
-  padding: 0;
+@import url('https://fonts.cdnfonts.com/css/interface-trial');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'InterFace Trial', sans-serif;
+
 }
 
 a {
@@ -11,16 +13,286 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.mainContainer {
+  width: 100% !important;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.homeContainer {
+  width: 100%;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 70px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background-color: rgb(255, 255, 255);
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.modalContainer {
+  margin: 0;
+  text-align: center;
+}
+
+.loginHeader {
+  font-size: 20px;
+  padding: 15px 0 0 0;
+}
+
+.modalContainer p {
+  padding: 0 0 20px 0;
+  font-size: 14px;
+}
+
+.modalContainer hr {
+  border-top: 1px solid rgba(154, 154, 154, 0.37);
+}
+
+.register {
+  text-decoration: underline;
+  color: #00a826;
+}
+
+.closeModal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+
+}
+
+.loginForm {
+  width: 90%;
+  margin: 25px auto;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.loginForm label {
+  font-size: 14px;
+}
+.loginForm input {
+  width: 100%;
+  height: 35px;
+  padding-left: 15px;
+  border: 1px solid rgb(184, 180, 180);
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.loginForm button {
+  width: 50%;
+  display: block;
+  margin: 5px auto;
+  padding: 10px;
+  color: #fff;
+  background-color: #00a826;
+  border: 1px solid #00a826;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 180px;
+  padding-left: 15px;
+}
+
+.CTA {
+  display: flex;
+  gap: 5px;
+  padding-right: 15px;
+}
+
+.login {
+  width: 110px;
+  background-color: #00a826;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  border: #00a826 solid;
+  border-radius: 2px;
+  padding: 6px 12px;
+}
+
+.signup {
+  width: 110px;
+  background-color: #fff;
+  color: #00a826;
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px #00a826 solid;
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+
+
+.navContainer {
+  height: 60px;
+  width: 100%;
+  background-color: #070707dc;
+  display: flex;
+  position: absolute;
+}
+
+.navigation {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  color: #bdbcbc;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.navItem {
+  height: 100%;
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+.active1 {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  border-bottom: #00a826 4px solid;
+}
+.active2 {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  border-bottom: rgb(172, 197, 64) 4px solid;
+}
+.active3 {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  border-bottom: rgb(0, 170, 204) 4px solid;
+}
+.active4 {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  border-bottom: rgb(179, 17, 77) 4px solid;
+}
+.active5 {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  border-bottom: rgb(132, 52, 146) 4px solid;
+}
+
+.contentContainer {
+  background-position: top;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.dummyPage {
+  margin: 150px 50px;
+}
+
+.footerContainer {
+  height: 140px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #070707d1;
+}
+
+.footerContent{
+  width: 80%;
+  margin: auto;
+  color: #fff;
+  text-align: center;
+}
+
+.footerContent p {
+  font-size: 12px;
+  padding: 15px 0 10px 0 ;
+}
+
+.footerContent h2 {
+  font-size: 22px;
+  padding: 0 0 10px 0;
+}
+
+.footerContent button {
+  width: 300px;
+  background-color: #00a826;
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  border: #00a826 solid;
+  border-radius: 2px;
+  padding: 10px 12px;
+}
+
+@media (max-width: 716px) {
+  .login {
+    font-size: 12px;
+    width: 65px;
+    padding: 4px 0;
   }
-  body {
-    color: white;
-    background: black;
+  .signup {
+    font-size: 12px;
+    width: 65px;
+    padding: 6px 0;
+  }
+  .logo {
+    width: 120px;
+  }
+  .headerContainer {
+    height: 55px;
+  }
+  .navContainer {
+    height: 45px;
+  }
+  .footerContent button {
+    width: 95%;
+  }
+}
+
+@media (max-width: 425px) {
+  
+  .logo {
+    width: 100px;
   }
 }
