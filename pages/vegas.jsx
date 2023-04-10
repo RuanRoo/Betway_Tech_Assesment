@@ -1,14 +1,8 @@
 const Vegas = () => {
-    return ( 
-        <div className="dummyPage">
-
-        <h1>Vegas</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis dicta
-        consectetur porro obcaecati repellendus aliquam tempore, earum neque
-        quis suscipit dolorem debitis nostrum ipsa sint distinctio adipisci, non
-        dolorum. Nam!
-      </p>
+  return (
+    <div className="dummyPage">
+      <h1>Vegas</h1>
+      <br />
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis dicta
         consectetur porro obcaecati repellendus aliquam tempore, earum neque
@@ -22,7 +16,7 @@ const Vegas = () => {
         dolorum. Nam!
       </p>
     </div>
-     );
-}
- 
+  );
+};
+
 export default Vegas;
