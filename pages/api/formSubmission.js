@@ -1,4 +1,4 @@
-
+// sending username and password to api provided
 export default async function handler(req, res) {
     const { username, password } = req.body;
     const data = { username, password };

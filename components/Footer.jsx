@@ -2,16 +2,19 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 
-const Footer = ({openModal}) => {
+const Footer = ({ openModal }) => {
   // useRouter hook to detect an active link and add styling
   const router = useRouter();
 
   // set state for Confetti
   const [isConfettiActive, setIsConfettiActive] = useState(false);
 
+  // function to envoke confetti when "join now" button is clicked
   function handleClick() {
     setIsConfettiActive(true);
   }
+
+  // if statement to apply classname to bottom CTA button based on the url
 
   let className = "";
 
@@ -30,7 +33,7 @@ const Footer = ({openModal}) => {
   // storing fetched data to state
   const [data, setData] = useState("");
 
-  // useEffect hook is used to fetch the data when the component mounts
+  // useEffect hook is used to fetch the data from local api endpoint when the component mounts
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,22 +49,25 @@ const Footer = ({openModal}) => {
       <div className="footerContent">
         <p>{data.par}</p>
         <h2>{data.heading}</h2>
-        <button className={className} onClick={() => {
-          handleClick() 
-          openModal()
-        }}>
+        <button
+          className={className}
+          onClick={() => {
+            handleClick();
+            openModal();
+          }}
+        >
           {data.button}
         </button>
         {isConfettiActive && (
-                <Confetti
-                  width={window.innerWidth}
-                  height={window.innerHeight}
-                  recycle={false}
-                  numberOfPieces={500}
-                  gravity={0.5}
-                  onConfettiComplete={() => setIsConfettiActive(false)}
-                />
-              )}
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            recycle={false}
+            numberOfPieces={500}
+            gravity={0.5}
+            onConfettiComplete={() => setIsConfettiActive(false)}
+          />
+        )}
       </div>
     </div>
   );

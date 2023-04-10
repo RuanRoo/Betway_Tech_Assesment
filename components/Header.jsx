@@ -2,21 +2,20 @@ import Link from "next/link";
 import { useState } from "react";
 import Modal from "react-modal";
 
-
-const Header = ({openModal, closeModal, modalIsOpen}) => {
+const Header = ({ openModal, closeModal, modalIsOpen }) => {
   // set state to open/close modal
   const [isOpen, setIsOpen] = useState(false);
-  
-  
+
   // set state to form data
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
   // Success message
-  const [successMessage, setSuccessMessage] = useState(null); 
-  const [registerMessage, setregisterMessage] = useState(null); 
- 
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [registerMessage, setregisterMessage] = useState(null);
+
+  // Post request to local api which is then sent to the provided api on the server side
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,24 +28,27 @@ const Header = ({openModal, closeModal, modalIsOpen}) => {
         },
         body: JSON.stringify({ username, password }),
       });
-  
+
       const data = await response.json();
       console.log(`Welcome ${data.name}!`);
 
-      if(response.ok) {
-        // Print welcome message and close modal after 3 seconds
-        setSuccessMessage(`Welcome back ${data.name}`)
-        setregisterMessage(`Please check your email, your free bets are on the way!`)
-        setTimeout(() => setIsOpen(false), 2000) 
-        setTimeout(() => setSuccessMessage(''), 2000)
-        setTimeout(() => closeModal(), 4000) 
-        setTimeout(() => setregisterMessage(''), 4000)
+      if (response.ok) {
+        // Print welcome message and close login modal after 2 seconds
+        // Print register message and close register modal after 4 seconds
+        setSuccessMessage(`Welcome back ${data.name}`);
+        setregisterMessage(
+          `Please check your email, your free bets are on the way!`
+        );
+        setTimeout(() => setIsOpen(false), 2000);
+        setTimeout(() => setSuccessMessage(""), 2000);
+        setTimeout(() => closeModal(), 4000);
+        setTimeout(() => setregisterMessage(""), 4000);
       }
-    } catch(error) {
-      console.error(error)
+    } catch (error) {
+      console.error(error);
     }
-    
 
+    // clearing input data
     setUsername("");
     setPassword("");
     setName("");
@@ -56,7 +58,7 @@ const Header = ({openModal, closeModal, modalIsOpen}) => {
     <div className="headerContainer">
       <div className="logoContainer">
         <Link href="/">
-        <img src="logo.png" className="logo" alt="" />
+          <img src="logo.png" className="logo" alt="" />
         </Link>
       </div>
       <div className="CTA">
@@ -76,7 +78,7 @@ const Header = ({openModal, closeModal, modalIsOpen}) => {
               New customer? &nbsp;
               <span className="register" onClick={openModal}>
                 Register here
-                </span>
+              </span>
             </p>
             <hr />
             <form className="loginForm" onSubmit={handleSubmit}>
@@ -101,7 +103,6 @@ const Header = ({openModal, closeModal, modalIsOpen}) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button type="submit">Login</button>
-
               <Link className="forgotPassword" href="/register">
                 <p>Forgot Username/Password</p>
               </Link>
@@ -109,7 +110,9 @@ const Header = ({openModal, closeModal, modalIsOpen}) => {
             <div className="closeModal" onClick={() => setIsOpen(false)}>
               &#x2715;
             </div>
-            {successMessage && <p className="welcomeMessage">{successMessage}</p>}
+            {successMessage && (
+              <p className="welcomeMessage">{successMessage}</p>
+            )}
           </div>
         </Modal>
         <button className="signup" onClick={openModal}>
@@ -159,14 +162,14 @@ const Header = ({openModal, closeModal, modalIsOpen}) => {
                 minLength={8}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button type="submit">
-                Create Account
-              </button>
+              <button type="submit">Create Account</button>
             </form>
             <div className="closeModal" onClick={closeModal}>
               &#x2715;
             </div>
-            {registerMessage && <p className="welcomeMessage">{registerMessage}</p>}
+            {registerMessage && (
+              <p className="welcomeMessage">{registerMessage}</p>
+            )}
           </div>
         </Modal>
       </div>
