@@ -154,6 +154,10 @@ a {
   padding-bottom: 20px;
 }
 
+.errorMessage {
+  background-color: rgb(247, 92, 92);
+}
+
 .login {
   width: 110px;
   background-color: #00a826;

@@ -8,6 +8,7 @@ export default async function handler(req, res) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     };
+    
   
     try {
       const response = await fetch(url, options);

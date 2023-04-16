@@ -15,10 +15,34 @@ const Header = ({ openModal, closeModal, modalIsOpen }) => {
   const [successMessage, setSuccessMessage] = useState(null);
   const [registerMessage, setregisterMessage] = useState(null);
 
+  // Error
+  const [error, setError] = useState("");
+
   // Post request to local api which is then sent to the provided api on the server side
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Perform client-side validation
+    if (!username || !password) {
+      setError("Email and password are required fields");
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(username)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    // Validate password length
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long");
+      return;
+    }
+
+    setError("");
 
     try {
       const response = await fetch("/api/formSubmission", {
@@ -33,6 +57,7 @@ const Header = ({ openModal, closeModal, modalIsOpen }) => {
       console.log(`Welcome ${data.name}!`);
 
       if (response.ok) {
+        
         // Print welcome message and close login modal after 2 seconds
         // Print register message and close register modal after 4 seconds
         setSuccessMessage(`Welcome back ${data.name}`);
@@ -84,11 +109,10 @@ const Header = ({ openModal, closeModal, modalIsOpen }) => {
             <form className="loginForm" onSubmit={handleSubmit}>
               <label>Username</label> <br />
               <input
-                type="email"
+                type="text"
                 id="username"
                 value={username}
                 placeholder="Username"
-                required
                 onChange={(e) => setUsername(e.target.value)}
               />
               <br />
@@ -98,8 +122,6 @@ const Header = ({ openModal, closeModal, modalIsOpen }) => {
                 id="password"
                 value={password}
                 placeholder="Password"
-                required
-                minLength={8}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button type="submit">Login</button>
@@ -110,6 +132,8 @@ const Header = ({ openModal, closeModal, modalIsOpen }) => {
             <div className="closeModal" onClick={() => setIsOpen(false)}>
               &#x2715;
             </div>
+            {/* Render the error message if it exists */}
+            {error && <p className="errorMessage">{error}</p>}
             {successMessage && (
               <p className="welcomeMessage">{successMessage}</p>
             )}
