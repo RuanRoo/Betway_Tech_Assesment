@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #e9eae9;
+  background-color: #20252D;
 }
 
 a {
@@ -31,7 +31,7 @@ a {
 .headerContainer {
   width: 100%;
   height: 70px;
-  background-color: black;
+  background-color: #20252D;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,12 +79,12 @@ a {
 
 .register {
   border-bottom: 1px dotted;
-  color: #00a826;
+  color: #4ECF7A;
   cursor: pointer;
 }
 
 .forgotPassword {
-  color: #00a826;
+  color: #4ECF7A;
   text-align: center;
   font-weight: 700;
   font-size: 12px;
@@ -125,8 +125,8 @@ a {
   margin: 10px auto;
   padding: 10px;
   color: #fff;
-  background-color: #00a826;
-  border: 1px solid #00a826;
+  background-color: #4ECF7A;
+  border: 1px solid #4ECF7A;
   border-radius: 2px;
   font-weight: 700;
   cursor: pointer;
@@ -137,7 +137,7 @@ a {
   align-items: center;
 }
 .logo {
-  width: 180px;
+  width: 200px;
   padding-left: 15px;
 }
 
@@ -160,11 +160,11 @@ a {
 
 .login {
   width: 110px;
-  background-color: #00a826;
+  background-color: #4ECF7A;
   color: #fff;
   font-weight: 800;
   font-size: 14px;
-  border: #00a826 solid;
+  border: #4ECF7A solid;
   border-radius: 2px;
   padding: 6px 12px;
   cursor: pointer;
@@ -173,10 +173,10 @@ a {
 .signup {
   width: 110px;
   background-color: #fff;
-  color: #00a826;
+  color: #4ECF7A;
   font-weight: 800;
   font-size: 14px;
-  border: 1px #00a826 solid;
+  border: 1px #4ECF7A solid;
   border-radius: 2px;
   padding: 5px 10px;
   cursor: pointer
@@ -186,7 +186,7 @@ a {
 .navContainer {
   height: 60px;
   width: 100%;
-  background-color: #070707dc;
+  background-color: #0d0e12dc;
   display: flex;
   position: absolute;
 }
@@ -215,14 +215,14 @@ a {
   align-items: center;
   text-align: center;
   color: #fff;
-  border-bottom: #00a826 4px solid;
+  border-bottom: #4ECF7A 4px solid;
 }
 .active2 {
   display: grid;
   align-items: center;
   text-align: center;
   color: #fff;
-  border-bottom: rgb(172, 197, 64) 4px solid;
+  border-bottom: rgb(202, 36, 36) 4px solid;
 }
 .active3 {
   display: grid;
@@ -267,6 +267,7 @@ a {
   left: 10%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  color: #e9eae9;
 }
 
 @media (max-width: 1200px) {
@@ -280,12 +281,12 @@ a {
   font-weight: 800;
 }
 .dummyText span {
-  color: #00a826;
+  color: #4ECF7A;
 }
 .dummyText h1 {
   font-size: 82px;
   font-weight: 800;
-  color: #00a826;
+  color: #4ECF7A;
 }
 
 
@@ -293,7 +294,7 @@ a {
 .dummyPage {
   width: 60%;
   margin: 10% auto;
-
+  color: #e9eae9;
 }
 
 .footerContainer {
@@ -302,7 +303,7 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #070707d1;
+  background-color: #0d0e12dc;
 }
 
 .footerContent{
@@ -324,22 +325,22 @@ a {
 
 .ctaButton1 {
   width: 300px;
-  background-color: #00a826;
+  background-color: #4ECF7A;
   color: #fff;
   font-weight: 800;
   font-size: 16px;
-  border: #00a826 solid;
+  border: #4ECF7A solid;
   border-radius: 2px;
   padding: 10px 12px;
   cursor: pointer;
 }
 .ctaButton2 {
   width: 300px;
-  background-color: rgb(172, 197, 64);
+  background-color: rgb(202, 36, 36);
   color: #fff;
   font-weight: 800;
   font-size: 16px;
-  border: rgb(172, 197, 64) solid;
+  border: rgb(202, 36, 36) solid;
   border-radius: 2px;
   padding: 10px 12px;
   cursor: pointer
@@ -412,7 +413,7 @@ a {
     padding: 6px 0;
   }
   .logo {
-    width: 120px;
+    width: 150px;
   }
   .headerContainer {
     height: 55px;
@@ -440,6 +441,6 @@ a {
 @media (max-width: 425px) {
   
   .logo {
-    width: 100px;
+    width: 120px;
   }
 }

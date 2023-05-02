@@ -83,7 +83,7 @@ const Header = ({ openModal, closeModal, modalIsOpen }) => {
     <div className="headerContainer">
       <div className="logoContainer">
         <Link href="/">
-          <img src="logo.png" className="logo" alt="" />
+          <img src="/logo.png" className="logo" alt="" />
         </Link>
       </div>
       <div className="CTA">
